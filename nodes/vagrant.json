@@ -1,0 +1,34 @@
+{
+"postgresql": {
+  "ssl": false,
+  "listen_addresses": "*",
+  "pg_hba": "host    all             all             10.2.12.1/24 md5",
+  "users": [
+    {
+      "username": "\\\"auth-server\\\"",
+      "password": "Password",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    },
+    {
+      "username": "audit",
+      "password": "Password",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    },
+    {
+      "username": "\\\"rails-api\\\"",
+      "password": "P@ssw0rd",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    }
+  ] 
+},
+"run_list":
+   [
+     "recipe[rabbitmq]", "recipe[rabbitmq-management]"
+   ]
+}

@@ -1,0 +1,56 @@
+{
+  "locales": {
+    "server_locale": "en_GB.UTF-8",
+    "server_time_zone": "Europe/Amsterdam"
+  },
+"postgresql": {
+  "client_encoding": "UTF-8",
+  "ssl": false,
+  "listen_addresses": "*",
+  "pg_hba": "host    all             all             10.0.2.1/24 md5",
+  "users": [
+    {
+      "username": "\\\"auth-server\\\"",
+      "password": "Password",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    },
+    {
+      "username": "audit",
+      "password": "Password",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    },
+    {
+      "username": "\\\"rails-api\\\"",
+      "password": "P@ssw0rd",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    },
+    {
+      "username": "\\\"pushmessaging-api\\\"",
+      "password": "P@ssw0rd",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    }
+  ],
+ "databases": [
+  {
+    "name": "my_db",
+    "owner": "audit",
+    "template": "template0",
+    "encoding": "utf8",
+    "locale": "en_US.UTF8"
+  }
+]
+ 
+},
+"run_list":
+   [
+     "recipe[locales]", "recipe[postgresql::server]"
+   ]
+}

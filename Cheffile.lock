@@ -1,0 +1,73 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    build-essential (1.3.2)
+    erlang (1.1.2)
+      yum (>= 0.5.0)
+    ohai (1.1.6)
+    rabbitmq (1.4.0)
+      apt (>= 1.1)
+      erlang (>= 0.9)
+      yum (>= 0.5.0)
+    rabbitmq-management (0.0.3)
+      rabbitmq (>= 0.0.0)
+    runit (0.16.2)
+    yum (2.1.0)
+
+GIT
+  remote: git://github.com/opscode-cookbooks/nginx.git
+  ref: master
+  sha: 5f1e7e045df82686481a72098617c2d250960929
+  specs:
+    nginx (1.1.5)
+      build-essential (>= 0.0.0)
+      ohai (>= 1.1.4)
+
+GIT
+  remote: https://github.com/cookbooks/apt.git
+  ref: master
+  sha: 32e11300c104fabbd1e0d0104b944f9807a909b0
+  specs:
+    apt (1.3.2)
+
+GIT
+  remote: https://github.com/fnichol/chef-rvm.git
+  ref: master
+  sha: 24ecbb02890a64e58fd994a8b66991f44d664799
+  specs:
+    rvm (0.9.1)
+
+GIT
+  remote: https://github.com/phlipper/chef-postgresql.git
+  ref: master
+  sha: 5719d7c15dc97960827329cba64de1e10125b4ea
+  specs:
+    postgresql (0.6.0)
+      apt (>= 0.0.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-redis.git
+  ref: master
+  sha: 754968132d6a3e1aa5c0cb7724d7df5e4390e6ba
+  specs:
+    redis (0.4.0)
+      apt (>= 0.0.0)
+
+GIT
+  remote: https://github.com/pyrat/chef-locales.git
+  ref: master
+  sha: a1bbe62467ec15233c0a844eceed3ee1be1bace0
+  specs:
+    locales (0.0.1)
+
+DEPENDENCIES
+  apt (>= 0)
+  locales (>= 0)
+  nginx (>= 0)
+  postgresql (>= 0)
+  rabbitmq (>= 0)
+  rabbitmq-management (>= 0)
+  redis (>= 0)
+  runit (>= 0)
+  rvm (>= 0)
+

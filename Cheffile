@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'runit'
+cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
+cookbook 'rvm', :git => 'https://github.com/fnichol/chef-rvm.git'
+cookbook 'apt', :git => 'https://github.com/cookbooks/apt.git'
+cookbook 'rabbitmq'
+cookbook 'rabbitmq-management'
+cookbook 'locales', :git => 'https://github.com/pyrat/chef-locales.git'
+cookbook 'postgresql', :git => 'https://github.com/phlipper/chef-postgresql.git'
+cookbook 'redis', :git => 'https://github.com/phlipper/chef-redis.git'
