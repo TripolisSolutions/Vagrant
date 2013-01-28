@@ -1,4 +1,7 @@
 {
+"redis": {
+  "bind": ""
+},
 "run_list":
    [
      "recipe[redis::server]"
