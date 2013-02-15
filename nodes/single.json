@@ -1,11 +1,12 @@
 {
 "postgresql": {
+  "client_encoding": "UTF-8",
   "ssl": false,
   "listen_addresses": "*",
-  "pg_hba": "host    all             all             10.2.12.1/24 md5",
+  "pg_hba": "host    all             all             10.0.2.1/24 md5",
   "users": [
     {
-      "username": "\\\"auth-server\\\"",
+      "username": "auth",
       "password": "Password",
       "superuser": false,
       "createdb": true,
@@ -19,16 +20,23 @@
       "login": true
     },
     {
-      "username": "\\\"rails-api\\\"",
+      "username": "rails",
+      "password": "P@ssw0rd",
+      "superuser": false,
+      "createdb": true,
+      "login": true
+    },
+    {
+      "username": "push",
       "password": "P@ssw0rd",
       "superuser": false,
       "createdb": true,
       "login": true
     }
-  ] 
+  ]
 },
 "run_list":
    [
-     "recipe[rabbitmq]", "recipe[rabbitmq-management]"
+     "recipe[postgresql::server]", "recipe[rabbitmq]", "recipe[rabbitmq-management]", "recipe[redis::server]"
    ]
 }
